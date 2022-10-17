@@ -1,9 +1,10 @@
 # Ingestor
 
-Example pipeline to ingest [RIS Live](https://ris-live.ripe.net/) BGP messages into [Clickhouse](https://clickhouse.com/) using [Vector](https://vector.dev/)
-
 > **Warning**
-> Intended as a simple POC to prove out ingesting RIS Live messages
+> 
+> Only intended to server as a simple POC
+
+Example pipeline to ingest [RIS Live](https://ris-live.ripe.net/) BGP messages into [Clickhouse](https://clickhouse.com/) using [Vector](https://vector.dev/)
 
 ## Example Pipeline
 
