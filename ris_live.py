@@ -32,14 +32,14 @@ async def process(message):
     data = orjson.loads(message)
 
     # as `path` may contain mixed data types Array(UInt32 | Array(Uint32)) (see https://ris-live.ripe.net/manual/)
-    # check path for AS_SET (the array in the array) and pop it into it's own key
+    # check `path`` for AS_SET (the array in the array) and pop it into it's own key
     if "path" in data["data"]:
         for idx, i in enumerate(data["data"]["path"]):
             if type(i) == type(list()):
                 data["data"]["path"].pop(int(idx))
                 data["data"]["as_set"] = i
 
-    # print to stout to pipe into whatever
+    # print and pipe into whatever
     print(orjson.dumps(data).decode("utf-8"))
 
 

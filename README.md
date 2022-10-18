@@ -2,7 +2,7 @@
 
 > **Warning**
 > 
-> Only intended to server as a simple POC
+> Only intended to serve as a simple POC
 
 Example pipeline to ingest [RIS Live](https://ris-live.ripe.net/) BGP messages into [Clickhouse](https://clickhouse.com/) using [Vector](https://vector.dev/)
 
