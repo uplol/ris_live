@@ -15,7 +15,7 @@ create table if not exists bgp.ris_live
     ),
     as_set Array(Int32), --
     community Array(Array(Nullable(UInt32))),
-    host String,
+    host LowCardinality(String),
     id String,
     med Nullable(UInt32),
     origin Nullable(String),
