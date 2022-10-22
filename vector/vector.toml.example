@@ -5,18 +5,11 @@ decoding.codec = "json"
 [transforms.update_only]
 type = "filter"
 inputs = ["stdin"]
-condition = '.data.type == "UPDATE"'
-
-[transforms.move_up]
-type = "remap"
-inputs = ["update_only"]
-source = """
-. = .data
-"""
+condition = '.type == "UPDATE"'
 
 [sinks.clickhouse_http]
 type = "http"
-inputs = ["move_up"]
+inputs = ["update_only"]
 encoding.codec = "json"
 uri = "http://localhost:8123/?query=INSERT%20INTO%20bgp.ris_live_queue%20%28data%29%20FORMAT%20JSONAsString"
 auth.strategy = "basic"
