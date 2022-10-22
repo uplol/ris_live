@@ -28,6 +28,7 @@ create table if not exists bgp.ris_live
     withdrawals Array(Nullable(String))
 )
 ENGINE = MergeTree()
+PARTITION BY toYYYYMMDD(timestamp)
 ORDER BY (timestamp, id);
 
 create materialized view if not exists bgp.ris_live_mv to bgp.ris_live
